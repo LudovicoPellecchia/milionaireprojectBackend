@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //rotta api che
-Route::post('quiz/generate', [QuizGeneratorController::class, 'index']);
+Route::post('quiz/generate', [QuizGeneratorController::class, 'generateQuiz']);
