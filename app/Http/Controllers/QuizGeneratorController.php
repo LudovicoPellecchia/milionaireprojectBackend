@@ -25,8 +25,8 @@ class QuizGeneratorController extends Controller
         try {
             $result = $client->completions()->create([
                 'model' => 'gpt-3.5-turbo-instruct',
-                'prompt'=> "Genera un array JSON di 13 oggetti con domande di quiz di '{$validatedData['categoria']}', su '{$validatedData['argomento']}', a difficoltà '{$validatedData['difficoltà']}'. Ogni oggetto ha una chiave 'domanda', una chiave 'opzioni' con quattro risposte e una chiave 'rispostaCorretta'. Assicurati che le domande siano basate su fatti ben documentati e che evitino ambiguità o informazioni errate. Fornisci risposte chiare e precise.",
-                'temperature' => 0.6,
+                'prompt'=> "Genera un array JSON di 13 oggetti con domande di quiz di '{$validatedData['categoria']}', su '{$validatedData['argomento']}', a difficoltà '{$validatedData['difficoltà']}'. Ogni oggetto ha una chiave 'domanda', una chiave 'opzioni' con quattro risposte di cui una chiave 'rispostaCorretta' con la risposta corretta. Assicurati che le domande siano basate su fatti ben documentati. Evita ambiguità o informazioni errate. Fornisci risposte chiare e precise.",
+                'temperature' => 0.2,
                 'max_tokens' => 2000,
                 'n' => 1, // Numero di risposte da generare
             ]);
